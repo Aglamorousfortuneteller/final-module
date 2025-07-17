@@ -38,6 +38,7 @@ class Storage(models.Model):
 class Supplier(models.Model):
     company = models.ForeignKey('Company', on_delete=models.CASCADE, related_name='suppliers')
     name = models.CharField(max_length=255)
+    inn = models.CharField(max_length=12, unique=True)
     contact_info = models.TextField(blank=True)
 
     def __str__(self):
